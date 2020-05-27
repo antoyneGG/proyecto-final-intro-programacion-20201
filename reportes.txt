@@ -1,0 +1,19 @@
+Reporte de vehiculos estacionados segun tipo de usuario:
+Estudiantes: 0
+Profesores: 0
+Personal Administrativo: 0
+Visitantes: 0
+Reporte de vehiculos estacionados segun tipo de vehiculo: 
+Automoviles: 0
+Automoviles Electricos: 0
+Motocicletas: 0
+Automoviles para discapacitados: 0
+Reporte de porcentaje de ocupacion por piso: 
+Piso 1: 0.0%
+Piso 2: 0.0%
+Piso 3: 0.0%
+Piso 4: 0.0%
+Piso 5: 0.0%
+Piso 6: 0.0%
+Reporte de porcentaje de ocupacion global del parqueadero: 
+Porcentaje de ocupacion global: 0.0%
