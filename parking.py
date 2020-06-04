@@ -47,7 +47,6 @@ Salidas:
 	False: Si la suma total es igual a 0.
 '''
 def validacionDisponibilidad(tipov):
-
 	lista = consultarEspacioDisponiblePorPiso(tipov)
 	sumeme = 0
 	for i in range(len(lista)):
@@ -188,7 +187,7 @@ def registrar():
 	elif tipoUser == 3:
 		tipoUser = "Personal Administrativo" 
 	placa = input("Digite la placa de su vehiculo\n")
-	vehiculo = eval(input("Digite el tipo de su vehiculo: \n1. Automóvil \n2. Automóvil Eléctrico \n3. Motocicleta \n4. Discapacitado\n"))
+	vehiculo = eval(input("Digite el tipo de su vehiculo: \n1. Automóvil \n2. Automóvil Eléctrico \n3. Motocicleta \n4. Discapacitado\n5. Camioneta\n"))
 	if vehiculo == 1:
 		vehiculo = "Automóvil"
 	elif vehiculo == 2:
@@ -197,6 +196,8 @@ def registrar():
 		vehiculo = "Motocicleta"
 	elif vehiculo == 4:
 		vehiculo = "Discapacitado"
+	elif vehiculo == 5:
+		vehiculo = 'Camioneta'
 	planPago = eval(input("Digite su plan de pago: \n1. Mensualidad \n2. Diario\n"))
 	if planPago == 1:
 		planPago = "Mensualidad"
@@ -279,6 +280,9 @@ def buscarTipoVehiculo(placa):
 				return(3)
 			elif (users['usuarios'][i][4]) == 'Discapacitado':
 				return(4)
+			elif (users['usuarios'][i][4]) == 'Camioneta':
+				return(5)
+
 
 '''
 Nombre: buscarTipoUser
@@ -325,7 +329,7 @@ def ingresarVehiculo():
 	placa = input('Ingrese la placa de su vehiculo\n')
 	if not validarPlaca(placa):
 		tipoUser ='Visitante'
-		vehiculo = eval(input("Digite el tipo de su vehiculo: \n1. Automóvil \n2. Automóvil Eléctrico \n3. Motocicleta \n4. Discapacitado\n"))
+		vehiculo = eval(input("Digite el tipo de su vehiculo: \n1. Automóvil \n2. Automóvil Eléctrico \n3. Motocicleta \n4. Discapacitado\n5. Camioneta\n"))
 		tipov = vehiculo
 		if vehiculo == 1:
 			vehiculo = "Automóvil"
@@ -335,6 +339,8 @@ def ingresarVehiculo():
 			vehiculo = "Motocicleta"
 		elif vehiculo == 4:
 			vehiculo = "Discapacitado"
+		elif vehiculo == 5:
+			vehiculo = 'Camioneta'
 		planPago = 'Diario'
 		añadirVisitante(placa,vehiculo)
 	else:
@@ -500,7 +506,7 @@ def menu():
 		reportes()
 		print('Gracias por utilizar nuestro servicio.')
 
-archiwo = open('usuarios.json','r')
+archiwo = open('usuarios.json','r',encoding='utf-8')
 users = json.load(archiwo)
 
 file = open('tiposParqueaderos.json','r')
